@@ -1,4 +1,5 @@
 #include "InvalidDataException.h"
+#include <string.h>
 
 InvalidDataException::InvalidDataException()
 {

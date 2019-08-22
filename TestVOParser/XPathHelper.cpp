@@ -3109,7 +3109,7 @@ int XPathHelper::getColumn(const XalanNode *node, Column &c, bool isUnicode, con
 
 										strcpy(data, string[0]);
 
-										for(i=1; i<string.size(); i++)
+										for(int i=1; i<string.size(); i++)
 										{
 											data = strcat(data, " ");
 											data = strcat(data, string[i]);
@@ -3151,7 +3151,7 @@ int XPathHelper::getColumn(const XalanNode *node, Column &c, bool isUnicode, con
 					data = new char[len];
 					strcpy(data, string[0]);
 
-					for(i=1; i<string.size(); i++)
+					for(int i=1; i<string.size(); i++)
 					{
 						cout << i << " " << string[i] << endl;
 						data = strcat(data, " ");
@@ -3252,19 +3252,20 @@ int XPathHelper::getBinaryStream(const XalanNode *node, vector<Row> &rowList, St
 	} 
 	else 
 	{
-		using xercesc::Base64)
-		using xercesc::XMLString)
+		using xercesc::Base64;
+		using xercesc::XMLString;
 		
 		data = getXMLByteString(childNode->getNodeValue());
 
 		st.setData(((char *)data), status);
  
-		unsigned int streamLength = 0, counter = 0;
+		XMLSize_t streamLength = 0;
+		unsigned int counter = 0;
 		char * str;
-		XMLByte * decodedStream;
+		XMLByte * decodedStream = NULL;
 		if (st.getEncoding(str, status) == SUCCESS && str != NULL)
 		{
-			if(stricmp(str, "base64") == 0)
+			if(_stricmp(str, "base64") == 0)
 			{
 				decodedStream = Base64::decode(data, &streamLength);
 			}
@@ -3353,7 +3354,7 @@ int XPathHelper::getBinaryStream(const XalanNode *node, vector<Row> &rowList, St
 					
 						// We need to store the numOfItems which is the actual no of
 						// bits present in the stream.
-						itoa(numOfItems, strBuff, 10);
+						_itoa(numOfItems, strBuff, 10);
 
 						// Here numOfItems is used to calculate the no of bytes
 						// which are used to hold all the bits in the array.
@@ -3398,12 +3399,12 @@ int XPathHelper::getBinaryStream(const XalanNode *node, vector<Row> &rowList, St
 									}
 									else 
 									{
-										itoa(((int)*((unsigned char *)(decodedData + counter + i))), strBuff, 10);
+										_itoa(((int)*((unsigned char *)(decodedData + counter + i))), strBuff, 10);
 									}
 								}
 								else 
 								{
-									itoa(((int)*((unsigned char *)(decodedData + counter + i))), strBuff, 10);
+									_itoa(((int)*((unsigned char *)(decodedData + counter + i))), strBuff, 10);
 								}
 								if(i == 0)
 								{
@@ -3492,12 +3493,12 @@ int XPathHelper::getBinaryStream(const XalanNode *node, vector<Row> &rowList, St
 									}
 									else 
 									{
-										itoa((*((short *)(decodedData + counter + i*2))), strBuff, 10);
+										_itoa((*((short *)(decodedData + counter + i*2))), strBuff, 10);
 									}
 								}
 								else 
 								{
-									itoa((*((short *)(decodedData + counter + i*2))), strBuff, 10);
+									_itoa((*((short *)(decodedData + counter + i*2))), strBuff, 10);
 								}
 								if(i == 0)
 								{
@@ -3552,12 +3553,12 @@ int XPathHelper::getBinaryStream(const XalanNode *node, vector<Row> &rowList, St
 									}
 									else 
 									{
-										itoa((*((int *)(decodedData + counter + i*4))), strBuff, 10);
+										_itoa((*((int *)(decodedData + counter + i*4))), strBuff, 10);
 									}
 								}
 								else 
 								{
-									itoa((*((int *)(decodedData + counter + i*4))), strBuff, 10);
+									_itoa((*((int *)(decodedData + counter + i*4))), strBuff, 10);
 								}
 								
 								if(i == 0)

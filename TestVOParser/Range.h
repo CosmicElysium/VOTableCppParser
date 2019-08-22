@@ -71,7 +71,7 @@ class Range {
 		/**
 		* Gets the PCDATA. 
 		*/
-		int Range::getPCData(char * &pcdata, int * status);
+		int getPCData(char * &pcdata, int * status);
 	
 	private: 
 		char * m_rangeValue;

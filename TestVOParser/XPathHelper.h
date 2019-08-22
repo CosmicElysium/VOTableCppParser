@@ -119,7 +119,7 @@ private:
 	int getValuesAttributes(const XalanNode *node, Values &v, int * status);
 	char * getCharString(XalanDOMString str);
 	XMLByte * getXMLByteString(XalanDOMString str);
-	unsigned short * XPathHelper::getShortString(XalanDOMString str, int &size);
+	unsigned short * getShortString(XalanDOMString str, int &size);
 	int getValues(const XalanNode *node, Values &v, int *status);
 	int getOptionAttributes(const XalanNode *node, Option &o, int *status);
 	Range * getRange(const XalanNode *node, int *status);
