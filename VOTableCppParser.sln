@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestVOParser", "TestVOParser\TestVOParser.vcxproj", "{C52A608F-2111-4A78-A8D1-114BD9C8F4C2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VOTableParser", "VOTableParser\VOTableParser.vcxproj", "{C52A608F-2111-4A78-A8D1-114BD9C8F4C2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VOAPITester", "VOAPITester\VOAPITester.vcxproj", "{13C95F14-272B-4725-848A-FD00725DA496}"
 EndProject
